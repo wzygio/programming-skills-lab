@@ -1,0 +1,47 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00      400     0.00     0.00  random_uniform
+  0.00      0.00     0.00        3     0.00     0.00  arralloc
+  0.00      0.00     0.00        3     0.00     0.00  subarray
+  0.00      0.00     0.00        1     0.00     0.00  percsort
+  0.00      0.00     0.00        1     0.00     0.00  rinit
+  0.00      0.00     0.00        1     0.00     0.00  rstart
+
+			Call graph
+
+
+granularity: each sample hit covers 2 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00     400/400         main [13]
+[1]      0.0    0.00    0.00     400         random_uniform [1]
+-----------------------------------------------
+                0.00    0.00       3/3           main [13]
+[2]      0.0    0.00    0.00       3         arralloc [2]
+                0.00    0.00       3/3           subarray [3]
+-----------------------------------------------
+                                   1             subarray [3]
+                0.00    0.00       3/3           arralloc [2]
+[3]      0.0    0.00    0.00       3+1       subarray [3]
+                                   1             subarray [3]
+-----------------------------------------------
+                0.00    0.00       1/1           main [13]
+[4]      0.0    0.00    0.00       1         percsort [4]
+-----------------------------------------------
+                0.00    0.00       1/1           main [13]
+[5]      0.0    0.00    0.00       1         rinit [5]
+                0.00    0.00       1/1           rstart [6]
+-----------------------------------------------
+                0.00    0.00       1/1           rinit [5]
+[6]      0.0    0.00    0.00       1         rstart [6]
+-----------------------------------------------
+
+Index by function name
+
+   [2] arralloc                [1] random_uniform          [6] rstart
+   [4] percsort                [5] rinit                   [3] subarray

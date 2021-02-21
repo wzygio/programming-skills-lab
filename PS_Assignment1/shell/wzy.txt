@@ -1,0 +1,4 @@
+Enter host name:
+Enter number of processors:
+Enter executable:
+Submitting fft to run on 4 processors on archer
